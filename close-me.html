@@ -1,0 +1,25 @@
+<html>
+ <head>
+  <script>
+   var startingCount = 11;
+   var startingTime = new Date();
+   var myVar = setInterval(function(){myTimer()}, 1000);
+   
+   function myTimer() {
+    var currentTime = new Date();
+    var secondsRemaining = startingCount - Math.floor(-1 * (startingTime - currentTime) / 1000);
+    if (secondsRemaining >= 0) {
+     document.getElementById("countDown").innerHTML = secondsRemaining;
+    } else if (secondsRemaining == -1) {
+     document.getElementById("countDown").innerHTML = "BOOM!";
+    } else {
+     document.getElementById("countDown").innerHTML = "Just kidding!";
+    }
+   }
+  </script>
+  <title>Close Me!</title>
+ <body>
+  <p align="center">Quick! Close this page before your computer blows up! Blowing up in:</p>
+  <h1 align="center" id="countDown"></h1>
+ </body>
+</html>
